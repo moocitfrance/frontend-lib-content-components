@@ -719,9 +719,9 @@ export class OLXParser {
       if (!toleranceValue || toleranceValue.length === 0) {
         settings.tolerance = { value: null, type: 'None' };
       } else if (toleranceValue.includes('%')) {
-        settings.tolerance = { value: parseInt(toleranceValue.slice(0, -1)), type: 'Percent' };
+        settings.tolerance = { value: parseFloat(toleranceValue.slice(0, -1)), type: 'Percent' };
       } else {
-        settings.tolerance = { value: parseInt(toleranceValue), type: 'Number' };
+        settings.tolerance = { value: parseFloat(toleranceValue), type: 'Number' };
       }
     } else {
       settings.tolerance = { value: null, type: 'None' };
